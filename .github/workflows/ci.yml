@@ -1,0 +1,22 @@
+name: Docker CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+
+    - name: Configurar Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Construir y etiquetar imágenes
+      run: docker-compose build
+
+    - name: Ejecutar contenedores
+      run: docker-compose up -d
