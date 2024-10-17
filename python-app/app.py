@@ -23,7 +23,6 @@ def convert_with_pandoc(input_file, output_file):
     except subprocess.CalledProcessError as e:
         print(f"Error al ejecutar Pandoc: {e}")
 
-# Ejemplo de uso
 if __name__ == "__main__":
 
     # INPUT
